@@ -61,4 +61,7 @@ public class UserDAO {
 		
 		return bean;
 	}
+
 }
+
+	
