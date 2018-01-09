@@ -16,10 +16,9 @@
     				System.out.println("----");
             		System.out.println(currentUser);
     				System.out.println("----");
-
             	%>
 			
-            Welcome <%= currentUser.getUserName() + " " + currentUser.getPassWord() %>
+            Welcome <%= currentUser.getUserName()  %>
          </center>
 
 </body>
