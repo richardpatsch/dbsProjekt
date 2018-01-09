@@ -1,6 +1,8 @@
 package db_projekt;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
 	static Connection currentCon = null;
@@ -62,6 +64,76 @@ public class UserDAO {
 		return bean;
 	}
 
+	
+	public static int save(UserBean u){  
+	    int status=0;  
+	    try{  
+	        Connection con=ConnectionManager.getConnection();  
+	        PreparedStatement ps=con.prepareStatement(  
+	"insert into users(username,password) values(?,?);");  
+	        ps.setString(1,u.getUserName());  
+	        ps.setString(2,u.getPassWord());  
+	        status=ps.executeUpdate();  
+	    }catch(Exception e){System.out.println(e);}  
+	    return status;  
+	}  
+	public static int update(UserBean u){  
+	    int status=0;  
+	    try{  
+	        Connection con=ConnectionManager.getConnection();  
+	        PreparedStatement ps=con.prepareStatement(  
+	"update users set username=?,password=? where id=?");  
+	        ps.setString(1,u.getUserName());  
+	        ps.setString(2,u.getPassWord());  
+	        status=ps.executeUpdate();  
+	    }catch(Exception e){System.out.println(e);}  
+	    return status;  
+	}  
+	public static int delete(UserBean u){  
+	    int status=0;  
+	    try{  
+	        Connection con=ConnectionManager.getConnection();  
+	        PreparedStatement ps=con.prepareStatement("delete from users where id=?");  
+	        ps.setInt(1,u.getID());  
+	        status=ps.executeUpdate();  
+	    }catch(Exception e){System.out.println(e);}  
+	  
+	    return status;  
+	}  
+	public static List<UserBean> getAllRecords(){  
+	    List<UserBean> list=new ArrayList<UserBean>();  
+	      
+	    try{  
+	        Connection con=ConnectionManager.getConnection();  
+	        PreparedStatement ps=con.prepareStatement("select * from users");  
+	        ResultSet rs=ps.executeQuery();  
+	        while(rs.next()){  
+	            UserBean u=new UserBean();  
+	            u.setID(rs.getInt("ID"));  
+	            u.setUserName(rs.getString("username"));  
+	            u.setPassWord(rs.getString("password"));  
+
+	            list.add(u);  
+	        }  
+	    }catch(Exception e){System.out.println(e);}  
+	    return list;  
+	}  
+	public static UserBean getRecordById(int id){  
+	    UserBean u=null;  
+	    try{  
+	        Connection con=ConnectionManager.getConnection();  
+	        PreparedStatement ps=con.prepareStatement("select * from users where id=?");  
+	        ps.setInt(1,id);  
+	        ResultSet rs=ps.executeQuery();  
+	        while(rs.next()){  
+	            u=new UserBean();  
+	            u.setID(rs.getInt("ID"));  
+	            u.setUserName(rs.getString("username"));  
+	            u.setPassWord(rs.getString("password"));  
+	        }  
+	    }catch(Exception e){System.out.println(e);}  
+	    return u;  
+	}  
 }
 
 	

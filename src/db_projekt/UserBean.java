@@ -1,6 +1,7 @@
 package db_projekt;
 
 public class UserBean {
+	private int ID;
 	private String UserName;
 	private String PassWord;
 	private Boolean valid;
@@ -22,6 +23,12 @@ public class UserBean {
 	}
 	public void setValid(Boolean valid) {
 		this.valid = valid;
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
 	}
 	
 }
