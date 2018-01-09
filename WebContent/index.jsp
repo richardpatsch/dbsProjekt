@@ -6,6 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>DB Projekt</title>
 </head>
-<body><a href="pages/login.jsp">Login</a>
+<body><a href="public/login.jsp">Login</a>
 </body>
 </html>
