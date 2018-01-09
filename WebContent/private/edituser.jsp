@@ -12,8 +12,8 @@
 <jsp:useBean id="u" class="db_projekt.UserBean"></jsp:useBean>  
 <jsp:setProperty property="*" name="u"/>  
 <%  
-int i=UserDAO.update(u);  
-response.sendRedirect("viewusers.jsp");  
+	int i=UserDAO.update(u);  
+	response.sendRedirect("viewusers.jsp"); 
 %>  
 
 </body>
