@@ -30,5 +30,4 @@ public class UserBean {
 	public void setID(int iD) {
 		ID = iD;
 	}
-	
 }
