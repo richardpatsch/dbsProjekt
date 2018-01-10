@@ -38,11 +38,11 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		try {
-			UserBean user = new UserBean();
-			user.setUsername(request.getParameter("un"));
+			PersonenBean user = new PersonenBean();
+			user.setSVId(request.getParameter("un"));
 			user.setPassword(request.getParameter("pw"));
 			
-			user = UserDAO.login(user);
+			user = PersonenDAO.login(user);
 			
 			if(user.isValid()) {
 				HttpSession session = request.getSession(true);

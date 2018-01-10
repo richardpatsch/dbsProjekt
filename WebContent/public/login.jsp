@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form action="../LoginServlet" method="POST">
-		Please enter your username 		
+		Please enter your SVId 		
 		<input type="text" name="un"/><br>		
 		
 		Please enter your password

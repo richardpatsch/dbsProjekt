@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="userform.html"></jsp:include>  
+<jsp:include page="personform.html"></jsp:include>  
 </body>
 </html>

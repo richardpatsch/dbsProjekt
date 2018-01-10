@@ -1,7 +1,7 @@
 <%@ page language="java" 
 	contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-	import="db_projekt.UserBean"
+	import="db_projekt.PersonenBean"
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,16 +12,19 @@
 <body>
 <center>
             <% 
-            		UserBean currentUser = ((UserBean) session.getAttribute("currentSessionUser")); 
+            		PersonenBean currentUser = ((PersonenBean) session.getAttribute("currentSessionUser")); 
     				System.out.println("----");
             		System.out.println(currentUser);
     				System.out.println("----");
             	%>
 			
-            Welcome <%= currentUser.getUsername()  %>
-            
-<a href="user/adduserform.jsp">Add User</a>  
-<a href="user/viewusers.jsp">View Users</a> 
+            Welcome <%= currentUser.getVorname() + " " + currentUser.getNachname() %>
+     
+    <br />       
+<a href="user/adduserform.jsp">Add User</a> <br/>
+<a href="user/viewusers.jsp">View Users</a> <br/>
+<a href="person/addpersonform.jsp">Add Person</a>  <br/>
+<a href="person/viewpersonen.jsp">View Personen</a> <br/>
          </center>
 
 </body>
