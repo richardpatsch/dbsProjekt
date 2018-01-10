@@ -10,8 +10,8 @@ public class UserDAO {
 	
 	public static UserBean login(UserBean bean) {
 		Statement stmt = null;
-		String username = bean.getUserName();
-		String pw = bean.getPassWord();
+		String username = bean.getUsername();
+		String pw = bean.getPassword();
 		
 		String query = "select * from users where username='" + username + "' AND password = '" + pw + "'";
 		
@@ -30,7 +30,7 @@ public class UserDAO {
 				bean.setValid(false);
 			} else if (more) {				
 				System.out.println("Welcome " + username);
-				bean.setUserName(username);
+				bean.setUsername(username);
 				bean.setValid(true);
 			}
 		} catch (Exception ex) {
@@ -71,8 +71,9 @@ public class UserDAO {
 	        Connection con=ConnectionManager.getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
 	"insert into users(username,password) values(?,?);");  
-	        ps.setString(1,u.getUserName());  
-	        ps.setString(2,u.getPassWord());  
+	        ps.setString(1,u.getUsername());  
+	        ps.setString(2,u.getPassword());  
+	        System.out.println(ps.toString());
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
@@ -83,8 +84,8 @@ public class UserDAO {
 	        Connection con=ConnectionManager.getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
 	"update users set username=?,password=? where id=?");  
-	        ps.setString(1,u.getUserName());  
-	        ps.setString(2,u.getPassWord());  
+	        ps.setString(1,u.getUsername());  
+	        ps.setString(2,u.getPassword());  
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
@@ -94,7 +95,7 @@ public class UserDAO {
 	    try{  
 	        Connection con=ConnectionManager.getConnection();  
 	        PreparedStatement ps=con.prepareStatement("delete from users where id=?");  
-	        ps.setInt(1,u.getID());  
+	        ps.setInt(1,u.getId());  
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	  
@@ -109,9 +110,9 @@ public class UserDAO {
 	        ResultSet rs=ps.executeQuery();  
 	        while(rs.next()){  
 	            UserBean u=new UserBean();  
-	            u.setID(rs.getInt("ID"));  
-	            u.setUserName(rs.getString("username"));  
-	            u.setPassWord(rs.getString("password"));  
+	            u.setId(rs.getInt("ID"));  
+	            u.setUsername(rs.getString("username"));  
+	            u.setPassword(rs.getString("password"));  
 
 	            list.add(u);  
 	        }  
@@ -127,9 +128,9 @@ public class UserDAO {
 	        ResultSet rs=ps.executeQuery();  
 	        while(rs.next()){  
 	            u=new UserBean();  
-	            u.setID(rs.getInt("ID"));  
-	            u.setUserName(rs.getString("username"));  
-	            u.setPassWord(rs.getString("password"));  
+	            u.setId(rs.getInt("ID"));  
+	            u.setUsername(rs.getString("username"));  
+	            u.setPassword(rs.getString("password"));  
 	        }  
 	    }catch(Exception e){System.out.println(e);}  
 	    return u;  

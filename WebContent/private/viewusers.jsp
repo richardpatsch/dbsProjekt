@@ -20,9 +20,9 @@ request.setAttribute("list",list);
 <table border="1" width="90%">  
 <tr><th>Id</th><th>Username</th><th>Password</th><th>Edit</th><th>Delete</th></tr>  
 <c:forEach items="${list}" var="u">  
-<tr><td>${u.getID()}</td><td>${u.getUserName()}</td><td>${u.getPassWord()}</td>  
-<td><a href="editform.jsp?id=${u.getID()}">Edit</a></td>  
-<td><a href="deleteuser.jsp?id=${u.getID()}">Delete</a></td></tr>  
+<tr><td>${u.getId()}</td><td>${u.getUsername()}</td><td>${u.getPassword()}</td>  
+<td><a href="editform.jsp?id=${u.getId()}">Edit</a></td>  
+<td><a href="deleteuser.jsp?id=${u.getId()}">Delete</a></td></tr>  
 </c:forEach>  
 </table>  
 <br/><a href="adduserform.jsp">Add New User</a>  

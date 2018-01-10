@@ -1,22 +1,22 @@
 package db_projekt;
 
 public class UserBean {
-	private int ID;
-	private String UserName;
-	private String PassWord;
+	private int id;
+	private String username;
+	private String password;
 	private Boolean valid;
 	
-	public String getUserName() {
-		return UserName;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserName(String userName) {
-		UserName = userName;
+	public void setUsername(String userName) {
+		this.username = userName;
 	}
-	public String getPassWord() {
-		return PassWord;
+	public String getPassword() {
+		return password;
 	}
-	public void setPassWord(String passWord) {
-		PassWord = passWord;
+	public void setPassword(String passWord) {
+		this.password = passWord;
 	}
 	public Boolean isValid() {
 		return valid;
@@ -24,10 +24,10 @@ public class UserBean {
 	public void setValid(Boolean valid) {
 		this.valid = valid;
 	}
-	public int getID() {
-		return ID;
+	public int getId() {
+		return id;
 	}
-	public void setID(int iD) {
-		ID = iD;
+	public void setId(int id) {
+		this.id = id;
 	}
 }

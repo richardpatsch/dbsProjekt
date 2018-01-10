@@ -18,7 +18,7 @@
     				System.out.println("----");
             	%>
 			
-            Welcome <%= currentUser.getUserName()  %>
+            Welcome <%= currentUser.getUsername()  %>
             
 <a href="adduserform.jsp">Add User</a>  
 <a href="viewusers.jsp">View Users</a> 
