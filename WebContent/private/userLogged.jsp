@@ -21,8 +21,6 @@
             Welcome <%= currentUser.getVorname() + " " + currentUser.getNachname() %>
      
     <br />       
-<a href="user/adduserform.jsp">Add User</a> <br/>
-<a href="user/viewusers.jsp">View Users</a> <br/>
 <a href="person/addpersonform.jsp">Add Person</a>  <br/>
 <a href="person/viewpersonen.jsp">View Personen</a> <br/>
          </center>
