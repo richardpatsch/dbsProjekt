@@ -20,7 +20,7 @@ UserBean u=UserDAO.getRecordById(Integer.parseInt(id));
 <input type="hidden" name="id" value="<%=u.getId() %>"/>  
 <table>  
 <tr><td>Name:</td><td>  
-<input type="text" name="name" value="<%= u.getUsername()%>"/></td></tr>  
+<input type="text" name="username" value="<%= u.getUsername()%>"/></td></tr>  
 <tr><td>Password:</td><td>  
 <input type="password" name="password" value="<%= u.getPassword()%>"/></td></tr>
 <tr><td colspan="2"><input type="submit" value="Edit User"/></td></tr>  

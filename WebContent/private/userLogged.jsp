@@ -20,8 +20,8 @@
 			
             Welcome <%= currentUser.getUsername()  %>
             
-<a href="adduserform.jsp">Add User</a>  
-<a href="viewusers.jsp">View Users</a> 
+<a href="user/adduserform.jsp">Add User</a>  
+<a href="user/viewusers.jsp">View Users</a> 
          </center>
 
 </body>

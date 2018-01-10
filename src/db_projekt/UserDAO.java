@@ -70,7 +70,7 @@ public class UserDAO {
 	    try{  
 	        Connection con=ConnectionManager.getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
-	"insert into users(username,password) values(?,?);");  
+	"insert into users (username,password) values (?,?);");  
 	        ps.setString(1,u.getUsername());  
 	        ps.setString(2,u.getPassword());  
 	        System.out.println(ps.toString());
@@ -86,6 +86,7 @@ public class UserDAO {
 	"update users set username=?,password=? where id=?");  
 	        ps.setString(1,u.getUsername());  
 	        ps.setString(2,u.getPassword());  
+	        ps.setInt(3,  u.getId());
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
