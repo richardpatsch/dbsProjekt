@@ -40,7 +40,7 @@ request.setAttribute("buchungen",bu);
 
 <hr />
 
-<h1><marquee scrollamount=200>Select Kontaktperson</marquee></h1>
+<h1><marquee scrollamount=2>Select Kontaktperson</marquee></h1>
 
 <%  
 List<KontaktpersonBean> list=KontaktpersonDAO.getAllRecords();  
