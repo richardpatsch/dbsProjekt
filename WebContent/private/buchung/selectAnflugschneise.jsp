@@ -32,7 +32,7 @@ request.setAttribute("liste",liste);
 </tr>  
 <c:forEach items="${liste}" var="a">  
 	<tr>
-		<td>${a.getSchneisennummer()}1
+		<td>${a.getSchneisennummer()}
 	</tr>  
 </c:forEach>  
 </table> 
