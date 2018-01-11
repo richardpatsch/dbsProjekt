@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"
     import="db_projekt.KontaktpersonBean, db_projekt.AnflugschneisenBean, db_projekt.AnflugschneisenDAO, java.util.*"
     %>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -32,7 +32,7 @@ request.setAttribute("liste",liste);
 </tr>  
 <c:forEach items="${liste}" var="a">  
 	<tr>
-		<td>${a.getSchneisennummer()}</td>
+		<td>${a.getSchneisennummer()}1
 	</tr>  
 </c:forEach>  
 </table> 

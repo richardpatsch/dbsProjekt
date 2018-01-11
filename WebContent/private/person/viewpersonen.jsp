@@ -42,8 +42,8 @@ request.setAttribute("list",list);
 		<td>${u.getStrasse()}</td>  
 		<td>${u.getHNr()}</td>  
 		<td>${u.getTelefonnummer_a()}</td>  
-		<td>${u.getTelefonnummer_b()}</td>  ,
-		<td>${u.getPassword()}</td>  
+		<td>${u.getTelefonnummer_b()}</td>
+		<td>${u.getPasswort()}</td>  
 		<td><a href="editform.jsp?SVId=${u.getSVId()}">Edit</a></td>  
 		<td><a href="deleteperson.jsp?SVId=${u.getSVId()}">Delete</a></td>
 	</tr>  

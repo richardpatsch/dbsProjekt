@@ -56,7 +56,7 @@ PersonenBean u=PersonenDAO.getRecordById(Integer.parseInt(id));
 	</tr>
 	<tr>
 		<td>Password:</td>
-		<td><input type="text" name="password" value="<%= u.getPassword()%>"/></td>
+		<td><input type="text" name="passwort" value="<%= u.getPasswort()%>"/></td>
 	</tr>
 	<tr>
 		<td colspan="2"><input type="submit" value="Edit Person"/></td>

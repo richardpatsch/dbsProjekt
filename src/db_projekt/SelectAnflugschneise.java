@@ -36,7 +36,7 @@ public class SelectAnflugschneise extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
 		
 		AnflugschneisenBean ks = AnflugschneisenDAO.getRecordById(request.getParameter("schneisennummer").toString());
 		if (ks != null) {
