@@ -97,18 +97,21 @@ public class PersonenDAO {
 	    try{  
 	        Connection con=ConnectionManager.getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
-	        		"update Personen set SVId=?, Vorname=?, Nachname=?, PLZ=?, Ort=?, Strasse=?, HNr=?, Telefonnummer_a=?, Telefonnummer_b=?, Password=?");  
-	        ps.setString(1,u.getSVId());  
-	        ps.setString(2,u.getVorname());  
-	        ps.setString(3,  u.getNachname());
-	        ps.setInt(4,  u.getPLZ());
-	        ps.setString(5,  u.getOrt());
-	        ps.setString(6,  u.getStrasse());
-	        ps.setInt(7, u.getHNr());
-	        ps.setString(8,  u.getTelefonnummer_a());
-	        ps.setString(9,  u.getTelefonnummer_b());
-	        ps.setString(10,  u.getPassword());
+	        		"update Personen set Vorname=?, Nachname=?, PLZ=?, Ort=?, Strasse=?, HNr=?, Telefonnummer_a=?, Telefonnummer_b=?, Password=? WHERE SVId=?");  
+	        ps.setString(1,u.getVorname());  
+	        ps.setString(2,  u.getNachname());
+	        ps.setInt(3,  u.getPLZ());
+	        ps.setString(4,  u.getOrt());
+	        ps.setString(5,  u.getStrasse());
+	        ps.setInt(6, u.getHNr());
+	        ps.setString(7,  u.getTelefonnummer_a());
+	        ps.setString(8,  u.getTelefonnummer_b());
+	        ps.setString(9,  u.getPassword());
+	        ps.setString(10,u.getSVId());  
 
+
+	        System.out.println(ps.toString());
+	        
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
