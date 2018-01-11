@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			PersonenBean user = new PersonenBean();
 			user.setSVId(request.getParameter("un"));
-			user.setPassword(request.getParameter("pw"));
+			user.setPasswort(request.getParameter("pw"));
 			
 			user = PersonenDAO.login(user);
 			
