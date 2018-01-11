@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SelectKontakt
+ * Servlet implementation class SelectAnflugschneise
  */
-@WebServlet("/SelectKontakt")
-public class SelectKontakt extends HttpServlet {
+@WebServlet("/SelectAnflugschneise")
+public class SelectAnflugschneise extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SelectKontakt() {
+    public SelectAnflugschneise() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,14 +36,13 @@ public class SelectKontakt extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		KontaktpersonBean kb = KontaktpersonDAO.getRecordById(request.getParameter("SVId").toString());
-		if (kb != null) {
-			HttpSession session = request.getSession(true);
-			session.setAttribute("currentKbSelection", kb);
-			response.sendRedirect("private/buchung/selectAnflugschneise.jsp");
-		} else {
+		doGet(request, response);
 		
+		AnflugschneisenBean ks = AnflugschneisenDAO.getRecordById(request.getParameter("snr").toString());
+		if (ks != null) {
+			HttpSession session = request.getSession(true);
+			session.setAttribute("currentSchneise", ks);
+			response.sendRedirect("private/buchung/selectEverythingElse.jsp");
 		}
 	}
 

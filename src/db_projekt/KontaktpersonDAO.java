@@ -28,12 +28,12 @@ public class KontaktpersonDAO {
 	    return list;  
 	}  
 	
-	public static KontaktpersonBean getRecordById(int id){  
+	public static KontaktpersonBean getRecordById(String id){  
 		KontaktpersonBean u=null;  
 	    try{  
 	        Connection con=ConnectionManager.getConnection();  
 	        PreparedStatement ps=con.prepareStatement("select * from Kontaktperson_Raumfluggesellschaft where SVId=?");  
-	        ps.setInt(1,id);  
+	        ps.setString(1,id);  
 	        ResultSet rs=ps.executeQuery();  
 	        while(rs.next()){  
 	            u=new KontaktpersonBean();  

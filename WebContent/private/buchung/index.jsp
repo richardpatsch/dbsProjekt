@@ -31,7 +31,7 @@ request.setAttribute("list",list);
 </c:forEach>  
 </table> 
 
-<form method="POST" action="${contextPath}/SelectKontakt">
+<form method="POST" action="../../SelectKontakt">
 <select name="SVId">
 <c:forEach items="${list}" var ="u">
 <option>${u.getSVId()}</option>
