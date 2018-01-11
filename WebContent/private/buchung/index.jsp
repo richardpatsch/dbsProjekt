@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Buchungen</h1>
+<h1><marquee behavior="alternate" scrollamount=100>Buchungen</marquee></h1>
 <%  
 List<BuchungsBean> bu=BuchungsDAO.getAllRecords();  
 request.setAttribute("buchungen",bu);  
@@ -40,7 +40,7 @@ request.setAttribute("buchungen",bu);
 
 <hr />
 
-<h1>Select Kontaktperson</h1>
+<h1><marquee scrollamount=200>Select Kontaktperson</marquee></h1>
 
 <%  
 List<KontaktpersonBean> list=KontaktpersonDAO.getAllRecords();  
