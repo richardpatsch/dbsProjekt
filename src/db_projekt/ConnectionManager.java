@@ -8,7 +8,7 @@ public class ConnectionManager {
 	
 	public static Connection getConnection() {
 		try {
-			String url = "jdbc:mysql://localhost/dbs_weine?useSSL=false";
+			String url = "jdbc:mysql://localhost/DB_RS?useSSL=false";
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			try {
