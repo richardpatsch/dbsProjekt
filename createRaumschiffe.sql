@@ -134,3 +134,5 @@ CREATE TABLE Ermaeßigungskarten_Entlehnungen
     FOREIGN KEY(Ladeperson_SVId) REFERENCES Ladepersonal(SVId),
     FOREIGN KEY(Schalterbeamte_SVId) REFERENCES Schalterbediensteter(SVId)
 );
+
+INSERT INTO `DB_RS`.`Personen` (`SVId`, `Vorname`, `Nachname`, `PLZ`, `Ort`, `Strasse`, `HNr`, `Telefonnummer_a`, `Telefonnummer_b`, `Passwort`) VALUES (5580, 'Richard', 'Test', 1234, 'Matzendorf', 'Testgasse 34', 1, 0123, 56, 'admin');
