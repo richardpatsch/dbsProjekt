@@ -34,6 +34,8 @@ public class PersonenDAO {
 			} else if (more) {				
 				System.out.println("Welcome " + svid);
 				bean.setSVId(svid);
+				bean.setVorname(rs.getString("Vorname"));
+				bean.setNachname(rs.getString("Nachname"));
 				bean.setValid(true);
 			}
 		} catch (Exception ex) {
