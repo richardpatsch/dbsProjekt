@@ -23,6 +23,7 @@
     <br />       
 <a href="person/addpersonform.jsp">Add Person</a>  <br/>
 <a href="person/viewpersonen.jsp">View Personen</a> <br/>
+<a href="buchung/index.jsp">Buchung</a>
          </center>
 
 </body>
