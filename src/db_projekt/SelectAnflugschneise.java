@@ -38,7 +38,7 @@ public class SelectAnflugschneise extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		AnflugschneisenBean ks = AnflugschneisenDAO.getRecordById(request.getParameter("snr").toString());
+		AnflugschneisenBean ks = AnflugschneisenDAO.getRecordById(request.getParameter("schneisennummer").toString());
 		if (ks != null) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("currentSchneise", ks);

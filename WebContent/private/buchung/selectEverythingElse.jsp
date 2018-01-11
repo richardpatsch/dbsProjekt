@@ -10,6 +10,22 @@
 <title>Insert title here</title>
 </head>
 <body>
+    <% 
+    				KontaktpersonBean currentKP = ((KontaktpersonBean) session.getAttribute("currentKbSelection")); 
+				AnflugschneisenBean currentA = ((AnflugschneisenBean) session.getAttribute("currentSchneise")); 
+    	%>
+
+<%= "Kontaktperson: " + currentKP.getSVId() + " " + currentKP.getKundennummer() + " " + currentKP.getName() %>
+<br/>
+<%= "Anflugschneise: " + currentA.getSchneisennummer() %>
+
+<form method="POST" action="../../Final">
+Buchungsnummer: <input type="text" name="buchungsnummer"/><br />
+Buchungsdatum: <input type="text" name="buchungsdatum"/><br />
+Beginnzeit: <input type="text" name="beginnzeit"/><br />
+Endzeit: <input type="text" name="endzeit"/><br />
+<input type="submit">
+</form>
 
 </body>
 </html>

@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SelectKontakt
+ * Servlet implementation class Final
  */
-@WebServlet("/SelectKontakt")
-public class SelectKontakt extends HttpServlet {
+@WebServlet("/Final")
+public class Final extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SelectKontakt() {
+    public Final() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,11 +37,24 @@ public class SelectKontakt extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		KontaktpersonBean kb = KontaktpersonDAO.getRecordById(request.getParameter("SVId").toString());
-		if (kb != null) {
-			HttpSession session = request.getSession(true);
-			session.setAttribute("currentKbSelection", kb);
-			response.sendRedirect("private/buchung/selectAnflugschneise.jsp");
+		HttpSession session = request.getSession(true);
+		KontaktpersonBean kb = (KontaktpersonBean) session.getAttribute("currentKbSelection");
+		AnflugschneisenBean ab = (AnflugschneisenBean) session.getAttribute("currentSchneise");
+		
+		System.out.println(kb);
+		System.out.println(ab);
+		
+		if (kb != null && ab != null) {
+			BuchungsBean b = new BuchungsBean();
+			b.setSVId(kb.getSVId());
+			b.setSchneisennummer(ab.getSchneisennummer());
+			b.setBuchungsnummer(Integer.valueOf(request.getParameter("buchungsnummer")));
+			b.setBuchungsdatum(request.getParameter("buchungsdatum"));
+			b.setBeginnzeit(request.getParameter("beginnzeit"));
+			b.setEndzeit(request.getParameter("endzeit"));
+			
+			BuchungsDAO.save(b);
+			response.sendRedirect("private/buchung/index.jsp");
 		}
 	}
 

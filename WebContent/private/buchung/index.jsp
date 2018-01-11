@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="db_projekt.KontaktpersonDAO, db_projekt.KontaktpersonBean,java.util.*"%>  
+<%@page import="db_projekt.KontaktpersonDAO, db_projekt.KontaktpersonBean,java.util.*, db_projekt.BuchungsBean, db_projekt.BuchungsDAO"%>  
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
     
@@ -10,7 +10,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body><h1>Select Kontaktperson</h1>
+<body>
+<h1>Buchungen</h1>
+<%  
+List<BuchungsBean> bu=BuchungsDAO.getAllRecords();  
+request.setAttribute("buchungen",bu);  
+%>  
+
+<table border="1" width="90%">  
+<tr>
+	<th>Kontaktperson</th>
+	<th>Schneisennummer</th>
+	<th>Buchungsnummer</th>
+	<th>Buchungsdatum</th>
+	<th>Beginnzeit</th>
+	<th>Endzeit</th>
+</tr>  
+<c:forEach items="${buchungen}" var="u">  
+	<tr>
+		<td>${u.getSVId()}</td>
+		<td>${u.getSchneisennummer()}</td>
+		<td>${u.getBuchungsnummer()}</td>  
+		<td>${u.getBuchungsdatum()}</td>  
+		<td>${u.getBeginnzeit()}</td>  
+		<td>${u.getEndzeit()}</td>  
+	</tr>  
+</c:forEach>  
+</table> 
+
+<hr />
+
+<h1>Select Kontaktperson</h1>
+
 <%  
 List<KontaktpersonBean> list=KontaktpersonDAO.getAllRecords();  
 request.setAttribute("list",list);  
