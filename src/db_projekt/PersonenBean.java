@@ -10,7 +10,7 @@ public class PersonenBean {
 	private int HNr;
 	private String Telefonnummer_a;
 	private String Telefonnummer_b;
-	private String password;
+	private String passwort;
 	private Boolean valid;
 	
 	public Boolean isValid() {
@@ -73,10 +73,10 @@ public class PersonenBean {
 	public void setTelefonnummer_b(String telefonnummer_b) {
 		Telefonnummer_b = telefonnummer_b;
 	}
-	public String getPassword() {
-		return password;
+	public String getPasswort() {
+		return passwort;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasswort(String password) {
+		this.passwort = password;
 	}
 }

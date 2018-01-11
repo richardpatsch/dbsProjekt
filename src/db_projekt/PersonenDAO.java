@@ -14,9 +14,9 @@ public class PersonenDAO {
 	public static PersonenBean login(PersonenBean bean) {
 		Statement stmt = null;
 		String svid = bean.getSVId();
-		String pw = bean.getPassword();
+		String pw = bean.getPasswort();
 		
-		String query = "select * from Personen where SVId='" + svid + "' AND password = '" + pw + "'";
+		String query = "select * from Personen where SVId='" + svid + "' AND passwort = '" + pw + "'";
 		
 		System.out.println("Your svid is " + svid);
 		System.out.println("Your password is " + pw);
@@ -74,7 +74,7 @@ public class PersonenDAO {
 	    try{  
 	        Connection con=ConnectionManager.getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
-	        		"insert into Personen (SVId, Vorname, Nachname, PLZ, Ort, Strasse, HNr, Telefonnummer_a, Telefonnummer_b, Password) values (?,?,?,?,?,?,?,?,?,?);");  
+	        		"insert into Personen (SVId, Vorname, Nachname, PLZ, Ort, Strasse, HNr, Telefonnummer_a, Telefonnummer_b, Passwort) values (?,?,?,?,?,?,?,?,?,?);");  
 	        ps.setString(1,u.getSVId());  
 	        ps.setString(2,u.getVorname());  
 	        ps.setString(3,  u.getNachname());
@@ -84,7 +84,7 @@ public class PersonenDAO {
 	        ps.setInt(7, u.getHNr());
 	        ps.setString(8,  u.getTelefonnummer_a());
 	        ps.setString(9,  u.getTelefonnummer_b());
-	        ps.setString(10,  u.getPassword());
+	        ps.setString(10,  u.getPasswort());
 	        
 	        System.out.println(ps.toString());
 	        status=ps.executeUpdate();  
@@ -97,7 +97,7 @@ public class PersonenDAO {
 	    try{  
 	        Connection con=ConnectionManager.getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
-	        		"update Personen set Vorname=?, Nachname=?, PLZ=?, Ort=?, Strasse=?, HNr=?, Telefonnummer_a=?, Telefonnummer_b=?, Password=? WHERE SVId=?");  
+	        		"update Personen set Vorname=?, Nachname=?, PLZ=?, Ort=?, Strasse=?, HNr=?, Telefonnummer_a=?, Telefonnummer_b=?, Passwort=? WHERE SVId=?");  
 	        ps.setString(1,u.getVorname());  
 	        ps.setString(2,  u.getNachname());
 	        ps.setInt(3,  u.getPLZ());
@@ -106,7 +106,7 @@ public class PersonenDAO {
 	        ps.setInt(6, u.getHNr());
 	        ps.setString(7,  u.getTelefonnummer_a());
 	        ps.setString(8,  u.getTelefonnummer_b());
-	        ps.setString(9,  u.getPassword());
+	        ps.setString(9,  u.getPasswort());
 	        ps.setString(10,u.getSVId());  
 
 
@@ -149,7 +149,7 @@ public class PersonenDAO {
 	            u.setHNr(rs.getInt("HNr"));
 	            u.setTelefonnummer_a(rs.getString("Telefonnummer_a"));
 	            u.setTelefonnummer_b(rs.getString("Telefonnummer_b"));
-	            u.setPassword(rs.getString("password")); 
+	            u.setPasswort(rs.getString("passwort")); 
 
 	            list.add(u);  
 	        }  
@@ -175,7 +175,7 @@ public class PersonenDAO {
 	            u.setHNr(rs.getInt("HNr"));
 	            u.setTelefonnummer_a(rs.getString("Telefonnummer_a"));
 	            u.setTelefonnummer_b(rs.getString("Telefonnummer_b"));
-	            u.setPassword(rs.getString("password")); 
+	            u.setPasswort(rs.getString("passwort")); 
 	        }  
 	    }catch(Exception e){System.out.println(e);}  
 	    return u;  
